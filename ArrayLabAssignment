@@ -45,9 +45,7 @@ public class ArrayLab {
         }
         //The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
         catch(Exception e){
-
         }
-
 
         return maxValue;
     }
@@ -62,6 +60,7 @@ public class ArrayLab {
         sumOfRow = 0;
             //scans length of array
             for (i = 0; i < a[x].length; i++) {
+                //adds elements of  row
                 sumOfRow += a[x][i];
             }
 
@@ -78,8 +77,11 @@ public class ArrayLab {
         int i,j,sumOfColumn;
         sumOfColumn = 0;
 
+        //scans length of array
         for(i=0; i < a.length; i++){
+            //
             for(j=x; j < x+1; j++){
+                //scans columns and returns the sum no matter if the Array is jagged or not
                 try {
                     sumOfColumn += a[i][j];
                 }catch (Exception e){
@@ -97,15 +99,18 @@ public class ArrayLab {
      */
     public static int[] allRowSums(int[][] a) {
         int i,j,totalSum;
+        //created an array to store data info with a.length so that the array is the length of 'a'
         int [] newArray = new int[a.length];
-
+        //scans length of array
         for(i=0; i < a.length; i++){
             totalSum = 0;
 
             for(j=0; j < a[i].length; j++){
+                //adds rows and columns
                 totalSum += a[i][j];
 
             }
+            //stores the value into the index
             newArray[i] = totalSum;
         }
 
